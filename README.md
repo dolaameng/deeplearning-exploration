@@ -3,6 +3,7 @@
 ### Why this project
 1. summarize usage patterns of deep learning for different tasks such as images, texts, speech, image-text embedding and etc.
 2. write tutorial code on how to use them
+
 ### What we want to cover
 1. how to use a specific framework
 2. how to pick the model for different data
@@ -36,9 +37,10 @@
 8. [Interesting read about word2vec, thought it is not "DEEP" really](https://levyomer.wordpress.com/2014/09/10/neural-word-embeddings-as-implicit-matrix-factorization/)
 
 ## 3. Resources
-
+TODO
 1. [pretrained weights for word2vec](??)
 2. [pretrained weights for Caffe](??)
 3. [quick installation script guide](??)
 
 ## 4. Exploration Notebooks
+TODO
