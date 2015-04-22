@@ -37,10 +37,10 @@
 8. [Interesting read about word2vec, thought it is not "DEEP" really](https://levyomer.wordpress.com/2014/09/10/neural-word-embeddings-as-implicit-matrix-factorization/)
 
 ## 3. Resources
-TODO
+
 1. [pretrained weights for word2vec](??)
-2. [pretrained weights for Caffe](??)
-3. [quick installation script guide](??)
+2. [pretrained weights for Caffe](https://github.com/BVLC/caffe/wiki/Model-Zoo)
+3. [quick installation script guide](installation.txt)
 
 ## 4. Exploration Notebooks
 TODO
