@@ -1,0 +1,86 @@
+#Install sublime-text 3
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+
+# Install pip
+sudo apt-get install python-pip python-dev build-essential 
+sudo pip install --upgrade pip
+sudo pip install --upgrade virtualenv
+
+#Ipython
+sudo pip install ipython[all]
+
+#Git
+sudo apt-get install git
+
+#Numpy
+sudo pip install numpy
+
+#Install Scipy
+sudo apt-get install python python-dev libatlas-base-dev gcc gfortran g++
+sudo pip install scipy
+
+#Install Scikit-Image
+sudo apt-get install libfreetype6-dev libpng12-dev
+sudo pip install cython six matplotlib networkx pillow 
+sudo pip install scikit-image
+
+#Pandas
+sudo pip install numexpr bottleneck
+sudo pip install pandas
+
+#Gensim
+sudo pip install gensim
+
+# sklearn
+sudo pip install scikit-learn
+
+#Theano
+sudo apt-get install libatlas3gf-base libatlas-dev python-dev
+sudo pip install Theano
+
+#Decaf
+sudo apt-get install mpich
+git clone https://github.com/UCB-ICSI-Vision-Group/decaf-release.git
+cd decaf-release
+### Need to change configuration in decaf/layers/cpp/Makefile 
+#### delete "-Wl" in the file 
+python setup.py install
+
+## Install Caffe withou GPU
+## Note : need to install protobuf from source or there will errors
+#pre-requisits for caffe
+sudo apt-get install libopenblas-dev
+sudo apt-get install libopencv-dev
+sudo apt-get install libleveldb-dev libsnappy-dev libboost-all-dev libhdf5-serial-dev
+sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+wget https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz
+tar -xvzf protobuf-2.6.1.tar.gz 
+cd protobuf-2.6.1/
+sudo apt-get install autoconf
+sudo apt-get install libtool
+./autogen.sh
+./configure
+make check
+sudo make install
+sudo ldconfig
+
+# install caffe
+git clone https://github.com/BVLC/caffe.git
+cd caffe
+cp Makefile.config.example Makefile.config
+## uncomment the line "# CPU_ONLY := 1" in Makefile.config
+make all
+make test
+make runtest
+cd python/
+for req in $(cat requirements.txt); do sudo pip install $req; done
+cd ..
+## Open Makefile.config, change the path to arrayobject.h if necessary
+sudo make pycaffe
+# open .bashrc and add the following line
+export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
+
+
+
