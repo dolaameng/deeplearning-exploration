@@ -52,7 +52,9 @@ python setup.py install
 ## Note : need to install protobuf from source or there will errors
 #pre-requisits for caffe
 sudo apt-get install libopenblas-dev
+## opencv 2.4 
 sudo apt-get install libopencv-dev
+## opencv 3.0, supported by caffe, see [link](http://rodrigoberriel.com/2014/10/installing-opencv-3-0-0-on-ubuntu-14-04/)
 sudo apt-get install libleveldb-dev libsnappy-dev libboost-all-dev libhdf5-serial-dev
 sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 wget https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz
