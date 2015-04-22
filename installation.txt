@@ -40,6 +40,23 @@ sudo pip install scikit-learn
 sudo apt-get install libatlas3gf-base libatlas-dev python-dev
 sudo pip install Theano
 
+# FOR THEANO with MULTICORE BLAS
+# http://deeplearning.net/software/theano/install_ubuntu.html#install-ubuntu
+# remove openblas if you installed it
+sudo apt-get remove libopenblas-base
+# Download the development version of OpenBLAS
+git clone git://github.com/xianyi/OpenBLAS
+cd OpenBLAS
+make FC=gfortran
+sudo make PREFIX=/usr/local/ install
+# Tell Theano to use OpenBLAS.
+# This works only for the current user.
+# Each Theano user on that computer should run that line.
+echo -e "\n[blas]\nldflags = -lopenblas\n" >> ~/.theanorc
+# add to ldconfig cache and check
+ldconfig
+ldconfig -p | grep openblas
+
 #Decaf
 sudo apt-get install mpich
 git clone https://github.com/UCB-ICSI-Vision-Group/decaf-release.git
