@@ -16,6 +16,8 @@
 ## 1. Frameworks to Cover - ordered by degree of interests
 
 - [pylearn2](http://deeplearning.net/software/pylearn2/)
+- [theanets](http://theanets.readthedocs.org/en/stable/)
+- [neurolab](https://pythonhosted.org/neurolab/)
 - [skilearn & related projects](http://scikit-learn.org/stable/related_projects.html)
 - [Caffe](http://caffe.berkeleyvision.org/)
 - [deeplearning4j](http://deeplearning4j.org/)
