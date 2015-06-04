@@ -65,7 +65,7 @@ cd decaf-release
 #### delete "-Wl" in the file 
 python setup.py install
 
-## Install Caffe withou GPU
+## Install Caffe without GPU
 ## Note : need to install protobuf from source or there will errors
 #pre-requisits for caffe
 sudo apt-get install libopenblas-dev
@@ -89,7 +89,7 @@ sudo ldconfig
 git clone https://github.com/BVLC/caffe.git
 cd caffe
 cp Makefile.config.example Makefile.config
-## uncomment the line "# CPU_ONLY := 1" in Makefile.config
+## uncomment the line "# CPU_ONLY := 1" in Makefile.config, change it to openblas for better cpu performance
 make all
 make test
 make runtest
