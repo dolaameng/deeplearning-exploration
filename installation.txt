@@ -89,8 +89,9 @@ sudo ldconfig
 git clone https://github.com/BVLC/caffe.git
 cd caffe
 cp Makefile.config.example Makefile.config
-## uncomment the line "# CPU_ONLY := 1" in Makefile.config, change it to openblas for better cpu performance
-make all
+## uncomment the line "# CPU_ONLY := 1" in Makefile.config, change it to openblas for better cpu performance - turn on `BLAS := open`
+## turn on `USE_PKG_CONFIG := 1` if you use opencv3.0, 
+make all -j $(nproc)
 make test
 make runtest
 cd python/
