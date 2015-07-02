@@ -19,6 +19,7 @@
 - [theanets](http://theanets.readthedocs.org/en/stable/)
 - [neurolab](https://pythonhosted.org/neurolab/)
 - [skilearn & related projects](http://scikit-learn.org/stable/related_projects.html)
+- [chainer](https://github.com/pfnet/chainer)
 - [Caffe](http://caffe.berkeleyvision.org/)
 - [deeplearning4j](http://deeplearning4j.org/)
 - [torch](http://torch.ch/)
@@ -40,6 +41,7 @@
 7. [Hacker's guide to Neural Networks](http://karpathy.github.io/neuralnets/)
 8. [Interesting read about word2vec, thought it is not "DEEP" really](https://levyomer.wordpress.com/2014/09/10/neural-word-embeddings-as-implicit-matrix-factorization/)
 9. [DEEP LEARNING: Methods and Applications](http://research.microsoft.com/apps/pubs/default.aspx?id=209355)
+10. [chainer documentation](http://docs.chainer.org/en/latest/)
 
 ## 3. Resources
 
