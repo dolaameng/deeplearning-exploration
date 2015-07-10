@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get install sublime-text-installer
 
 # Install pip
-sudo apt-get install python-pip python-dev build-essential 
+sudo apt-get install python-pip python-dev build-essential
 sudo pip install --upgrade pip
 sudo pip install --upgrade virtualenv
 
@@ -23,7 +23,7 @@ sudo pip install scipy
 
 #Install Scikit-Image
 sudo apt-get install libfreetype6-dev libpng12-dev
-sudo pip install cython six matplotlib networkx pillow 
+sudo pip install cython six matplotlib networkx pillow
 sudo pip install scikit-image
 
 #Pandas
@@ -57,25 +57,33 @@ echo -e "\n[blas]\nldflags = -lopenblas\n" >> ~/.theanorc
 ldconfig
 ldconfig -p | grep openblas
 
+## optionally install numpy based on new multithreading openblas
+sudo pip uninstall scipy
+sudo pip uninstall numpy
+sudo apt-get remove python-scipy
+sudo apt-get remove python-numpy
+## THEN follow the tutorial to install python based on openblas
+http://stackoverflow.com/questions/11443302/compiling-numpy-with-openblas-integration
+
 #Decaf
 sudo apt-get install mpich
 git clone https://github.com/UCB-ICSI-Vision-Group/decaf-release.git
 cd decaf-release
-### Need to change configuration in decaf/layers/cpp/Makefile 
-#### delete "-Wl" in the file 
+### Need to change configuration in decaf/layers/cpp/Makefile
+#### delete "-Wl" in the file
 python setup.py install
 
 ## Install Caffe without GPU
 ## Note : need to install protobuf from source or there will errors
 #pre-requisits for caffe
 sudo apt-get install libopenblas-dev
-## opencv 2.4 
+## opencv 2.4
 sudo apt-get install libopencv-dev
 ## opencv 3.0, supported by caffe, see [link](http://rodrigoberriel.com/2014/10/installing-opencv-3-0-0-on-ubuntu-14-04/)
 sudo apt-get install libleveldb-dev libsnappy-dev libboost-all-dev libhdf5-serial-dev
 sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 wget https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz
-tar -xvzf protobuf-2.6.1.tar.gz 
+tar -xvzf protobuf-2.6.1.tar.gz
 cd protobuf-2.6.1/
 sudo apt-get install autoconf
 sudo apt-get install libtool
@@ -90,7 +98,7 @@ git clone https://github.com/BVLC/caffe.git
 cd caffe
 cp Makefile.config.example Makefile.config
 ## uncomment the line "# CPU_ONLY := 1" in Makefile.config, change it to openblas for better cpu performance - turn on `BLAS := open`
-## turn on `USE_PKG_CONFIG := 1` if you use opencv3.0, 
+## turn on `USE_PKG_CONFIG := 1` if you use opencv3.0,
 make all -j $(nproc)
 make test
 make runtest
@@ -101,6 +109,3 @@ cd ..
 sudo make pycaffe
 # open .bashrc and add the following line
 export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
-
-
-
