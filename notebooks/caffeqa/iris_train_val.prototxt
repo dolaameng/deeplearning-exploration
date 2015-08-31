@@ -1,0 +1,98 @@
+## the prototxt and model name usually specifies the data it uses in training
+name: "IrisNet"
+
+## data layer for training
+layer {
+	name: "iris"
+	type: "HDF5Data"
+	top: "data"
+	top: "label"
+	include {
+		phase: TRAIN
+	}
+	## naming convention for layer-specific parameters
+	hdf5_data_param {
+		source: "iris_train_data.txt"
+		batch_size: 5
+	}
+}
+
+## data layer for test
+layer {
+	## same name as with training data layer
+	name: "iris"
+	type: "HDF5Data"
+	top: "data"
+	top: "label"
+	include {
+		phase: TEST
+	}
+	hdf5_data_param {
+		source: "iris_test_data.txt"
+		batch_size = 5
+	}
+}
+
+## computing layers: ip1 -> relu1 -> drop1 -> ip2 -> loss
+## (ip1, relu1, drop1) provides nonlinear layer, dropout for regluarization
+## (ip2)
+## (loss) calculate the final loss based on SoftmaxCrossEntropy
+layer {
+	name: "ip1"
+	type: "InnerProduct"
+	bottom: "data"
+	top: "ip1"
+	## mulitpliers for learning rate and decay for weights
+	param { lr_mult: 1 decay_mult: 1}
+	## mulitpliers for learning rate and decay for biases
+	param { lr_mult: 2 decay_mult: 1}
+	inner_product_param {
+		num_output: 50
+		weight_filler {type: "xavier"}
+		bias_filler {type: "constant"}
+	}
+}
+
+layer {
+	name: "relu1"
+	type: "ReLU"
+	## inplace transformation for parameterless layer
+	bottom: "ip1"
+	top: "ip1"
+}
+
+layer {
+	name: "drop1"
+	type: "Dropout"
+	## inplace transformation
+	bottom: "ip1"
+	top: "ip1"
+	dropout_param {
+		dropout_ratio : 0.5
+	}
+}
+
+layer {
+	name: "ip2"
+	type: "InnerProduct"
+	bottom: "ip1"
+	top: "ip2"
+	## mulitpliers for learning rate and decay for weights
+	param { lr_mult: 1 decay_mult: 1}
+	## mulitpliers for learning rate and decay for biases
+	param { lr_mult: 2 decay_mult: 1}
+	inner_product_param {
+		num_output: 50
+		weight_filler {type: "xavier"}
+		bias_filer {type: "constant" value: 0}
+	}
+}
+
+## loss layer
+layer {
+	name: "loss"
+	type: "SoftmaxWithLoss"
+	bottom: "ip2"
+	bottom: "label"
+	top: "loss"
+}

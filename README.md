@@ -18,7 +18,7 @@
 - [pylearn2](http://deeplearning.net/software/pylearn2/)
 - [theanets](http://theanets.readthedocs.org/en/stable/)
 - [neurolab](https://pythonhosted.org/neurolab/)
-- [skilearn & related projects](http://scikit-learn.org/stable/related_projects.html)
+- [sklearn & related projects](http://scikit-learn.org/stable/related_projects.html)
 - [chainer](https://github.com/pfnet/chainer)
 - [Caffe](http://caffe.berkeleyvision.org/)
 - [deeplearning4j](http://deeplearning4j.org/)
@@ -29,6 +29,11 @@
 - [ConvNetJS](http://cs.stanford.edu/people/karpathy/convnetjs/)
 - [deepdist](http://deepdist.com/)
 - [pybrain](http://pybrain.org/)
+- [Lasagne](https://github.com/Lasagne/Lasagne)
+- [keras](https://github.com/fchollet/keras)
+- [deepy](https://github.com/uaca/deepy)
+- [nolearn](https://github.com/dnouri/nolearn)
+- [blocks](https://github.com/mila-udem/blocks)
 
 ## 2. Online Tutorials
 
@@ -48,6 +53,8 @@
 1. [pretrained weights for word2vec](??)
 2. [pretrained weights for Caffe](https://github.com/BVLC/caffe/wiki/Model-Zoo)
 3. [quick installation script guide](installation.txt)
+4. [discussion on exsiting deep learning frameworks](http://datascience.stackexchange.com/questions/694/best-python-library-for-neural-networks)
+5. [discussion on deep models for specific applications](https://news.ycombinator.com/item?id=9283105)
 
 ## 4. Exploration Notebooks
 
