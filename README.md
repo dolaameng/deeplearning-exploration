@@ -61,6 +61,7 @@ Picking the right tool is hard, especially when the job you are faced up with is
 3. [quick installation script guide](installation.txt)
 4. [discussion on exsiting deep learning frameworks](http://datascience.stackexchange.com/questions/694/best-python-library-for-neural-networks)
 5. [discussion on deep models for specific applications](https://news.ycombinator.com/item?id=9283105)
+6. [machine learning pathway](http://www.erogol.com/machine-learning-pathway/) - a wonderful compilation of machine learning
 
 ## 4. Exploration Notebooks
 
