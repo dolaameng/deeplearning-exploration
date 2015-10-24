@@ -13,9 +13,10 @@
 5. interesting use cases
 
 ### Revision
-Picking the right tool is hard, especially when the job you are faced up with is both new and challenging. My initial thought was to compile, play with and test different deep learning frameworks in the literature. Soon I found it is almost impossible to do so, due to the rapid growing pace in deep learning and the update of implementation details (e.g., API) avaiable. Two important things I have learned from this project,
+Picking the right tool is hard, especially when the job you are faced up with is both new and challenging. My initial thought was to compile, play with and test different deep learning frameworks in the literature. Soon I found it is almost impossible to do so, due to the rapid growing pace in deep learning and the update of implementation details (e.g., API) avaiable. Several important things I have learned from this project,
 - It might be the trick done by data, rather than algorithms. We have all those fancy results recently for image/speech/text processing, and all those results were obtained by training "deep models" with "huge data". A good theory (e.g. CNN) is definitely necessary to achieve those successes. But beyond that, all the details are more or less on how to make the computation faster, more distributed, capable of accomodating more data, easier to use and etc. Some poeple even argued that given big data, you don't even need fancy algorithms, you just need to be able to train on them.
 - The choice right framework heavily depends on the task on your mind. For example, Caffe is fast and convienent if you already know what you want to build, and your data have already been in a good format. But applying Caffe on new raw images, e.g., by deploying it as a web  service is still tedious. On the other hand, other frameworks such as deep4j makes deep learning models more friendly with other machine learning models in a single platform - this is very helpful if need to combine different models for different tasks in your application - recognizing models, mixing it with texts, searching and etc. For learning purpose, I really like the philosophy and api behind theanets and keras - both of them represent the gist of deep learning in their api very well.
+- It is more important to get familiar with the ideas and tricks of using net models, e.g., what regularization and intialization are better for what layers, how number of layers influence the performance and etc, than depending heavily on any of existing APIs. It is simply because the field is changing very fast and so are the APIs. A very good source to gain this knowlege is the Stanford online course [CS231n](http://cs231n.github.io/)
 
 
 ## 1. Frameworks to Cover - ordered by degree of interests
@@ -60,6 +61,7 @@ Picking the right tool is hard, especially when the job you are faced up with is
 3. [quick installation script guide](installation.txt)
 4. [discussion on exsiting deep learning frameworks](http://datascience.stackexchange.com/questions/694/best-python-library-for-neural-networks)
 5. [discussion on deep models for specific applications](https://news.ycombinator.com/item?id=9283105)
+6. [machine learning pathway](http://www.erogol.com/machine-learning-pathway/) - a wonderful compilation of machine learning
 
 ## 4. Exploration Notebooks
 
