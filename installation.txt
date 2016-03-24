@@ -109,3 +109,27 @@ cd ..
 sudo make pycaffe
 # open .bashrc and add the following line
 export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
+
+
+# Install Torch
+curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
+git clone https://github.com/torch/distro.git ~/torch --recursive
+cd ~/torch 
+./install.sh      # and enter "yes" at the end to modify your bashrc
+source ~/.bashrc
+
+## iTorch
+sudo apt-get install libzmq3-dev libssl-dev python-zmq ## dependencies
+git clone https://github.com/facebook/iTorch.git
+cd iTorch
+luarocks make 
+
+## Install packages for Torch
+luarocks install nn
+luarocks install nngraph 
+luarocks install image
+
+## If you want to use GPU (make sure CUDA is installed)
+luarocks install cutorch
+luarocks install cunn
+luarocks install loadcaffe # if you want to use models in Caffe
