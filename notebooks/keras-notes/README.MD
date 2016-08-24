@@ -7,3 +7,6 @@
 - A lot of more
 ## The focus of these notes will be on high-level summary of how Keras is used in this fast-growing area
 - Things will change because the library itself is changing very fast.
+## TODO:
+- explaination of fuly convolutional network, including unpooling, deconvolution
+- explaination of rnn - the usage of stateful
