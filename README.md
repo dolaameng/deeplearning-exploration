@@ -66,5 +66,20 @@ Picking the right tool is hard, especially when the job you are faced up with is
 ## 4. Exploration Notebooks
 
 ## TODO
-- sklearn-theano
-- wrapper for pylearn2 ? 
+	- Applications to explore (most of them are keras based)
+		- https://github.com/farizrahman4u/seq2seq
+		- https://github.com/farizrahman4u/qlearning4k
+		- https://github.com/matthiasplappert/keras-rl
+
+		- http://ml4a.github.io/guides/
+
+		- https://github.com/kylemcdonald/SmileCNN
+		- https://github.com/jocicmarko/ultrasound-nerve-segmentation
+		- https://github.com/abbypa/NNProject_DeepMask
+		- https://github.com/awentzonline/keras-rtst
+
+		- https://github.com/phreeza/keras-GAN
+		- https://github.com/jacobgil/keras-dcgan
+
+		- https://github.com/mokemokechicken/keras_npi
+		- https://github.com/codekansas/keras-language-modeling
