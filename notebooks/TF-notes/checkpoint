@@ -1,0 +1,6 @@
+model_checkpoint_path: "celebA-gae.chkpt-9"
+all_model_checkpoint_paths: "celebA-gae.chkpt-5"
+all_model_checkpoint_paths: "celebA-gae.chkpt-6"
+all_model_checkpoint_paths: "celebA-gae.chkpt-7"
+all_model_checkpoint_paths: "celebA-gae.chkpt-8"
+all_model_checkpoint_paths: "celebA-gae.chkpt-9"
