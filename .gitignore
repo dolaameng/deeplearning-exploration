@@ -61,3 +61,4 @@ target/
 # ignored folders
 **/data/
 **/models/
+**/.ipynb_checkpoints
