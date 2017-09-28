@@ -12,6 +12,8 @@ from torchvision import transforms
 from itertools import chain
 import pickle
 
+LOAD_PRETRAIN = True
+
 ## load original data
 faces = np.load("../../../data/quickdraw/face.npy").reshape([-1, 28, 28])
 houses = np.load("../../../data/quickdraw/house.npy").reshape([-1, 28, 28])
@@ -128,6 +130,12 @@ generator_f2h = Generator().cuda() # face -> house
 generator_h2f = Generator().cuda() # house -> face
 discriminator_f = Discriminator().cuda() # face -> real/fake
 discriminator_h = Discriminator().cuda() # house -> real/fake
+
+if LOAD_PRETRAIN:
+    generator_f2h.load_state_dict(torch.load(open("../../../models/generator_f2h.pkl", "rb")))
+    generator_h2f.load_state_dict(torch.load(open("../../../models/generator_h2f.pkl", "rb")))
+    discriminator_f.load_state_dict(torch.load(open("../../../models/discriminator_f.pkl", "rb")))
+    discriminator_h.load_state_dict(torch.load(open("../../../models/discriminator_h.pkl", "rb")))
 
 generator_f2h.train()
 generator_h2f.train()
