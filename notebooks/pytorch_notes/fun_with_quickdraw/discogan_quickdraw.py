@@ -136,6 +136,7 @@ if LOAD_PRETRAIN:
     generator_h2f.load_state_dict(torch.load(open("../../../models/generator_h2f.pkl", "rb")))
     discriminator_f.load_state_dict(torch.load(open("../../../models/discriminator_f.pkl", "rb")))
     discriminator_h.load_state_dict(torch.load(open("../../../models/discriminator_h.pkl", "rb")))
+    print("Load Existing Models")
 
 generator_f2h.train()
 generator_h2f.train()
